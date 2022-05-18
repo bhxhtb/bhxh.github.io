@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Trang thông tin thẻ BHYT</title>
+    <link rel="stylesheet" href="https://congdulieu.online/Content/Custom/Tracuu/Css/style.css" media="screen" type="text/css" />
+    <link rel="stylesheet" href="https://congdulieu.online/Content/Custom/Tracuu/Css/frame.css" media="screen" type="text/css" />
+      <link rel="stylesheet" href="https://congdulieu.online/style.css" media="screen" type="text/css" />
+
+    <script type="text/javascript" src="/Content/Custom/js/jquery.min.js"></script>
+    <style>
+    table {
+    border-collapse: collapse;
+	width: 100%;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+  </style>
+</head>
+<body>
+    <!--//--Header----------------->
+    <div class="top-main">
+        <div class="wrap">
+            <div class="logo">
+                <h1>
+                    <a href="#" title="Trang thông tin thẻ BHYT">
+                        <br />
+                    <span>TRANG THÔNG TIN THẺ BHYT</span>
+                </a>
+            </h1>
+        </div>
+    </div>
+</div>
+<!--//--Main content----------------->
+<div class="wrap">
+    <div class="q-info"><p></p></div>
+</div>
+<div class="content-main">
+  <form action="kiemtrathe.php" method="post" id="kiemtrathe">
+        <div class="form-reg">
+            
+            <ul class="q-list">
+                <li><h2 style="text-transform:uppercase;font-weight:bold;text-align:center;"></h2></li>
+                <li><h2 style="text-align:center;">TRA CỨU THẺ BHYT</h2></li>
+                    <li>Vui lòng nhập thông tin vào các ô dưới đây</li>
+                    <li><label>Mã thẻ BHYT/số CCCD</label><input type="text" style="text-transform: uppercase;" id="sobhyt" name="sobhyt" placeholder="TA0123456789073 hoặc 456789073" value="<?php echo $sobhyt = $_GET['sobhyt'];?>" class="e-input" /></li>
+					<li><label>Họ và tên</label><input type="text" style="text-transform: capitalize;" id="hoten" name="hoten" placeholder="Nguyễn Quốc Hùng"value="<?php echo $hoten = $_GET['hoten'];?>" class="e-input" /></li>
+					<li><label>Ngày sinh</label><input type="text" id="namsinh" name="namsinh" placeholder="12/01/1999 hoặc 1999" value="<?php echo $namsinh = $_GET['namsinh'];?>" class="e-input" /></li>
+                    <li><label>&nbsp;</label><input id="submit" type="submit" onclick="dosubmit()" class="e-btn" value="Tra cứu"></li>
+                                           <br />
+                        <div>
+                           
+                           
+                    
+            </ul>
+           
+        </div>
+		      <div id="created"></div>
+<br><br><br>
+     <script type="text/javascript" src="/script.js"></script>
+
+</div>
+
+<style>
+	#formBSX * {box-sizing: border-box; font-family: arial !important;}
+	#formBSX p {margin: 0}
+	#formBSX .top {border: 1px solid #bd0d0d; display: flex; align-items: center;background: url(/Images/bgHead.png) top left repeat-x; padding: 7px 0; justify-content: center;}
+	#formBSX .top .text {color: #fff; text-transform: uppercase;; line-height: 18px; font-size: 13px; text-align: center;margin-left: 15px}
+	#formBSX .top .text p{font-size: 12px; font-weight: bold;}
+	#formBSX .bot {background: #e9ebeb; padding: 10px 7px; border: 1px solid #b8b3b3}
+	#formBSX .bot .item {margin-bottom: 10px;}
+	#formBSX .bot .item .label {margin-left: 7px; margin-bottom: 7px}
+	#formBSX .bot .item .input {border: 1px solid #b8b3b3; height: 30px; border-radius: 4px; width: 100%; padding: 0 10px; float: none;}
+	#formBSX #imgCaptcha{flex: 1}
+	#formBSX .bot .item .input[name=txt_captcha]{width: 90px; flex: unset;}
+	#formBSX .bot .btnTraCuu {border-radius: 3px; border: 1px solid #bd0d0d; height: 35px; display: table; margin: auto; background: url(/Images/bgBtn.png) left top repeat-x; width: 115px; color: #fff; text-decoration: none; text-align: center; line-height: 34px; border: 1px solid #bd0d0d; font-weight: bold; margin-top: 17px}
+	#formBSX .bot .flex {display: flex;  }
+	#formBSX .bot .flex .input {flex: 1; margin-left: 10px}
+	::-webkit-input-placeholder {font-style: italic; font-size: 11px;}:-moz-placeholder {font-style: italic; font-size: 11px;}::-moz-placeholder {font-style: italic; font-size: 11px;}:-ms-input-placeholder {font-style: italic; font-size: 11px;}
+	.xe_texterror{color:red; margin-top:10px; text-align: center;margin-bottom: -7px;}
+	.grecaptcha-badge{display:none;}
+</style>
+
+	
+</div>
+<!--//--Footer----------------->
+<div class="footer-main">
+    <div class="wrap">
+        <p>
+            BHYT
+          
+    </p>
+</div>
+</div>
+
+
+	
+	
+   
+
+
+</table>
+</center>
+</body>
+</html>
+<script type="text/javascript">
+        $("#refreshCaptcha").click(function () {
+            $("#ImgCaptcha").attr("src", "/TraCuu/GetCaptcha?time=" + new Date().getTime() + "&choose=1");
+        });
+
+        $(document).ready(function () {
+            $("#ImgCaptcha").attr("src", "/TraCuu/GetCaptcha?time=" + new Date().getTime() + "&choose=1");
+
+            $(window).resize(function () {
+                $(".content-main").css({ "min-height": $(window).height() - $(".top-main").height() - $(".footer-main").height() - 65 });
+            });
+            $(".content-main").css({ "min-height": $(window).height() - $(".top-main").height() - $(".footer-main").height() - 65 });
+
+        });
+
+        function dosubmit() {
+            $("#btnsubmit").attr("disabled", "disabled");
+            $("#err-msg").html("Đang tra cứu...");
+            $.ajax({
+                url: '/TraCuu/TraCuu',
+                type: 'POST',
+                data: $("#SearchTSForm").serialize(),
+                error: function (data) {
+                    $("#btnsubmit").removeAttr("disabled");
+                    $("#err-msg").html(data);
+                    $(".hd").hide();
+                    $("#ImgCaptcha").attr("src", "/TraCuu/GetCaptcha?time=" + new Date().getTime() + "&choose=1");
+                },
+                success: function (data) {
+                    $("#btnsubmit").removeAttr("disabled");
+                    if (data.Message != null) {
+                        $("#err-msg").html(data.Message);
+                        $(".hd").hide();
+                    } else {
+                        //$("#ts-name").html(data.HO_TEN);
+                        //$("#ts-sbd").html(data.SOBAODANH);
+                        $("#ts-mark").html(data.DIEM_THI.replace(/ /g, "&nbsp;"));
+                        //$("#imgResult").attr("src", data);
+                        if (data.DIEM_THI.indexOf('*') >= 0) {
+
+                        }
+                        $(".hd").show();
+                        $("#err-msg").html("");
+                    }
+                    $("#ImgCaptcha").attr("src", "/TraCuu/GetCaptcha?time=" + new Date().getTime() + "&choose=1");
+                }
+            });
+        }
+</script>
+<script src="script.js"></script>
+
+ </body>
+ </html>
+ 
